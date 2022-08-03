@@ -1,5 +1,12 @@
 import { css } from '@emotion/react'
 
-export const widthOfPasswordInput = css`
-  width: 1219px;
+import { colors } from 'src/GlobalCss'
+
+export const passwordInputContainer = css`
+  height: 500px;
+  /* background-color: ${colors.bgPrimary}; */
+`
+
+export const passwordInput = css`
+  margin-top: 50px;
 `

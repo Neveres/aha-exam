@@ -4,7 +4,6 @@ import { colors } from 'src/GlobalCss'
 
 export const headerContiner = css`
   height: 283px;
-  width: 1219px;
   margin-bottom: 24px;
   padding-left: 122px;
   display: flex;
