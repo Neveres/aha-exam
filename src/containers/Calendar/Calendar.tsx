@@ -1,11 +1,13 @@
 import React from 'react'
 
+import { menuItems } from 'src/Routes'
 import { ComponentHeader } from 'src/components'
+import { widthOfCalendar } from './styles'
 
 const Calendar = () => {
   return (
     <>
-      <ComponentHeader />
+      <ComponentHeader title={menuItems[1].name} />
       <div>Calendar</div>
     </>
   )

@@ -1,32 +1,26 @@
 /** @jsxImportSource @emotion/react */
-import React, { useCallback } from 'react'
+import React, { useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, MenuItem } from '@mui/material'
 
 import { menuItems } from 'src/Routes'
+import { appHeaderContainer } from './styles'
 
-export interface IAppHeaderProps {
-  pathname?: string
-}
+const AppHeader = () => {
+  const renderMenuItems = useMemo(
+    () =>
+      menuItems.map((item) => {
+        const { name, path } = item
 
-const AppHeader: React.FC<IAppHeaderProps> = () => {
-  const renderMenuItems = useCallback(() => {
-    return menuItems.map((item) => {
-      const { name, path } = item
-
-      return (
-        <MenuItem key={path}>
-          <Link to={path}>{name}</Link>
-        </MenuItem>
-      )
-    })
-  }, [])
-
-  return (
-    <Menu className="horiz-menu" open={true}>
-      {renderMenuItems()}
-    </Menu>
+        return (
+          <span key={path}>
+            <Link to={path}>{name}</Link>
+          </span>
+        )
+      }),
+    [],
   )
+
+  return <div css={appHeaderContainer}>{renderMenuItems}</div>
 }
 
 export default AppHeader

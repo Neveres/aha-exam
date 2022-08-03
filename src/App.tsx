@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <AppHeader pathname={pathname} />
+      <AppHeader />
 
       <AppBody pathname={pathname}>
         <Suspense fallback={<div>Loading...</div>}>
