@@ -17,5 +17,5 @@ export const GlobalCss = () => (
 
 export const colors = {
   bgPrimary: '#181818',
-  white: '#FFFFFF',
+  label: '#FFFFFF',
 }

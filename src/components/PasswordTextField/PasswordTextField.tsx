@@ -4,7 +4,7 @@ import { TextField, ThemeProvider } from '@mui/material'
 
 import { colors } from 'src/GlobalCss'
 import { validatePassword } from 'src/libraries'
-import { PasswordValidation } from './PasswordValidation'
+import { PasswordValidation } from 'src/components'
 import { theme } from './theme'
 import { passwordInput } from './styles'
 
@@ -25,10 +25,10 @@ export const PasswordTextField = () => {
           type="password"
           InputLabelProps={{
             shrink: true,
-            style: { color: colors.white },
+            style: { color: colors.label },
           }}
           inputProps={{
-            style: { color: colors.white },
+            style: { color: colors.label },
           }}
           placeholder="Password"
           css={passwordInput}
