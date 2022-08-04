@@ -6,7 +6,7 @@ import { ComponentHeader, AhaCalendar } from 'src/components'
 const Calendar = () => {
   return (
     <>
-      <ComponentHeader title={menuItems[1].name} />
+      {/* <ComponentHeader title={menuItems[1].name} /> */}
       <AhaCalendar />
     </>
   )
