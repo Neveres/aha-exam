@@ -11,7 +11,3 @@ export const inputContainer = css`
   padding-left: 50px;
   background-color: ${colors.bgPrimary};
 `
-
-export const passwordInput = css`
-  margin-top: 50px;
-`
