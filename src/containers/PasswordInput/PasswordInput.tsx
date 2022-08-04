@@ -3,6 +3,7 @@ import React, { useCallback, useMemo, useState } from 'react'
 import { TextField, ThemeProvider } from '@mui/material'
 
 import { menuItems } from 'src/Routes'
+import { colors } from 'src/GlobalCss'
 import { ComponentHeader } from 'src/components'
 import { validatePassword } from 'src/libraries'
 import { theme } from './theme'
@@ -28,10 +29,10 @@ const PasswordInput = () => {
             type="password"
             InputLabelProps={{
               shrink: true,
-              style: { color: '#ffffff' },
+              style: { color: colors.white },
             }}
             inputProps={{
-              style: { color: '#ffffff' },
+              style: { color: colors.white },
             }}
             placeholder="Password"
             css={passwordInput}

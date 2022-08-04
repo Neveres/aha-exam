@@ -2,7 +2,7 @@ import React from 'react'
 
 import { menuItems } from 'src/Routes'
 import { ComponentHeader } from 'src/components'
-import { widthOfCalendar } from './styles'
+// import { widthOfCalendar } from './styles'
 
 const Calendar = () => {
   return (

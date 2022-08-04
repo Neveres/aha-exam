@@ -3,7 +3,7 @@ import React from 'react'
 
 import { menuItems } from 'src/Routes'
 import { ComponentHeader } from 'src/components'
-import { widthOfAdvancedEffects } from './styles'
+// import { widthOfAdvancedEffects } from './styles'
 
 const AdvancedEffects = () => {
   return (

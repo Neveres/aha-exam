@@ -11,7 +11,7 @@ export const headerContiner = css`
   letter-spacing: -1.5px;
   border-radius: 50px 50px 0px 0px;
   background: ${colors.bgPrimary};
-  color: ${colors.titleColor};
+  color: ${colors.white};
   font-style: normal;
   font-weight: 700;
   font-size: 96px;

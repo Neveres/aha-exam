@@ -5,7 +5,7 @@ export const GlobalCss = () => (
   <Global
     styles={css`
       * {
-        font-family: ${fontFamily.heading};
+        font-family: 'Ubuntu' !important;
       }
 
       #root {
@@ -15,11 +15,7 @@ export const GlobalCss = () => (
   />
 )
 
-export const fontFamily = {
-  heading: 'Ubuntu',
-}
-
 export const colors = {
   bgPrimary: '#181818',
-  titleColor: '#FFFFFF',
+  white: '#FFFFFF',
 }

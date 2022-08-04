@@ -18,7 +18,6 @@ export const hintContainer = css`
   padding-bottom: 10px;
   display: flex;
   align-items: center;
-  width: 250px;
 
   span {
     color: #ffffff;
