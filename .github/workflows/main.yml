@@ -20,12 +20,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install
+      - name: Install modules
         run: |
-          npm install
-      - name: npm run lint
+          yarn
+      - name: Lint
         run: |
-          npm run lint
-      - name: npm run test
+          yarn lint
+      - name: Test
         run: |
-          npm run test
+          yarn test
