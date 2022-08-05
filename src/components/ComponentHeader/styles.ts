@@ -10,7 +10,7 @@ export const headerContiner = css`
   align-items: center;
   letter-spacing: -1.5px;
   border-radius: 50px 50px 0px 0px;
-  background: ${colors.bgPrimary};
+  background: ${colors.background};
   color: ${colors.label};
   font-style: normal;
   font-weight: 700;

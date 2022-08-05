@@ -5,7 +5,6 @@ export const GlobalCss = () => (
   <Global
     styles={css`
       * {
-        /* font-family: 'Ubuntu' !important; */
       }
 
       #root {
@@ -15,7 +14,20 @@ export const GlobalCss = () => (
   />
 )
 
+export const fontSize = {
+  extraLarge: '32px',
+  large: '16px',
+  normal: '14px',
+  small: '11px',
+}
+
+export const fontWeight = {
+  bolder: 700,
+  bold: 600,
+  lighter: 400,
+}
+
 export const colors = {
-  bgPrimary: '#181818',
+  background: '#181818',
   label: '#FFFFFF',
 }

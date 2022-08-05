@@ -9,5 +9,5 @@ export const passwordInputContainer = css`
 export const inputContainer = css`
   height: 907px;
   padding-left: 50px;
-  background-color: ${colors.bgPrimary};
+  background-color: ${colors.background};
 `
