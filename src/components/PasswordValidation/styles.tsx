@@ -1,6 +1,7 @@
 import { css } from '@emotion/react'
 
 export const hintsContainer = css`
+  font-family: 'Ubuntu' !important;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
