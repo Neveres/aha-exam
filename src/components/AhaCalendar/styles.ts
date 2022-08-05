@@ -95,6 +95,16 @@ export const calendarContainer = css`
     margin: 0;
   }
 
+  .MuiPickersBasePicker-pickerView,
+  .MuiPickersYearSelection-container {
+    height: 200px;
+    min-height: 0;
+  }
+
+  .MuiPickersBasePicker-container {
+    margin-bottom: 20px;
+  }
+
   .button-groups {
     position: absolute;
     right: 24px;

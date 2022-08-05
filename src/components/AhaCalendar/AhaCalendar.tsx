@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React, { useCallback, useState, useMemo } from 'react'
-import { ThemeProvider, Popper } from '@material-ui/core'
+import { Popper } from '@material-ui/core'
 import DateFnsUtils from '@date-io/date-fns'
 import {
   MuiPickersUtilsProvider,
@@ -11,7 +11,6 @@ import { CalendarProps } from '@material-ui/pickers/views/Calendar/Calendar'
 import { MaterialUiPickersDate } from '@material-ui/pickers/typings/date'
 
 import { YearPickerToolbar } from 'src/components'
-import { theme } from './theme'
 import { calendarContainer, notInCurrentMonth } from './styles'
 
 const MONTH_NAMES = [
@@ -101,29 +100,23 @@ export const AhaCalendar: React.FC<AhaCalendarProps> = (props) => {
       {!isYearPickerVisible && (
         <div className="year-picker-switch" onClick={showYearPicker}></div>
       )}
-      <ThemeProvider theme={theme}>
-        <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          {isYearPickerVisible ? (
-            <Picker
-              date={date}
-              onChange={onChangeYear}
-              views={['year']}
-              openTo={'year'}
-              ToolbarComponent={() => ToolbarComponent}
-            />
-          ) : (
-            <Calendar
-              date={date}
-              onChange={onChangeDate}
-              renderDay={renderDay}
-            />
-          )}
-        </MuiPickersUtilsProvider>
-        <div className="button-groups">
-          <button className="cancel-button">Cancel</button>
-          <button>OK</button>
-        </div>
-      </ThemeProvider>
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+        {isYearPickerVisible ? (
+          <Picker
+            date={date}
+            onChange={onChangeYear}
+            views={['year']}
+            openTo={'year'}
+            ToolbarComponent={() => ToolbarComponent}
+          />
+        ) : (
+          <Calendar date={date} onChange={onChangeDate} renderDay={renderDay} />
+        )}
+      </MuiPickersUtilsProvider>
+      <div className="button-groups">
+        <button className="cancel-button">Cancel</button>
+        <button>OK</button>
+      </div>
     </Popper>
   )
 }
