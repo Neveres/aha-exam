@@ -60,8 +60,10 @@ export const AhaCalendar: React.FC<AhaCalendarProps> = (props) => {
   const currentYear = useMemo(() => date.getFullYear(), [date])
   const currentMonth = useMemo(() => MONTH_NAMES[date.getMonth()], [date])
   const ToolbarComponent = useMemo(
-    () => <YearPickerToolbar year={currentYear} />,
-    [currentYear],
+    () => (
+      <YearPickerToolbar year={currentYear} date={date} setDate={setDate} />
+    ),
+    [currentYear, date],
   )
 
   const showYearPicker = useCallback(() => {

@@ -12,7 +12,7 @@ const Calendar = () => {
 
   return (
     <>
-      {/* <ComponentHeader title={menuItems[1].name} /> */}
+      <ComponentHeader title={menuItems[1].name} />
       <button ref={buttonRef} style={{ visibility: 'hidden' }}></button>
       <AhaCalendar anchorEl={anchorEl} />
     </>
