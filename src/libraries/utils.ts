@@ -4,12 +4,12 @@ const CHAR_CODE_OF_LOWER_A = 'a'.charCodeAt(0)
 const CHAR_CODE_OF_LOWER_Z = 'z'.charCodeAt(0)
 const CHAR_CODE_OF_LOWER_ZERO = '0'.charCodeAt(0)
 const CHAR_CODE_OF_LOWER_NINE = '9'.charCodeAt(0)
-const format = /^[~!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]*$/
+const format = /^[~!@#$%^&*()_+\-=[\]{};'`:"\\|,.<>/?]*$/
 const MINIMUN_LENGTH_OF_PASSWORD = 8
 
-const areCharactersEnough = (password: string) =>
+export const areCharactersEnough = (password: string) =>
   password.length >= MINIMUN_LENGTH_OF_PASSWORD
-const validPasswordWithCharCode = (password: string) => {
+export const validPasswordWithCharCode = (password: string) => {
   let isUpperCaseLetterExisted = false
   let isLowerCaseLetterExisted = false
   let isNumberExisted = false
