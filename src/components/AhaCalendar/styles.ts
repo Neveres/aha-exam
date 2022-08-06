@@ -6,7 +6,7 @@ export const yearPickerSwitch = css`
   position: absolute;
   top: 105px;
   left: 95px;
-  z-index: 999999999;
+  z-index: 2147483646;
   width: 130px;
   height: 23px;
   cursor: pointer;
@@ -81,7 +81,7 @@ export const calendarContainer = css`
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     overflow: hidden;
-
+    padding-left: 24px;
     .MuiPickersYear-root {
       display: inline-flex;
     }
@@ -97,12 +97,49 @@ export const calendarContainer = css`
 
   .MuiPickersBasePicker-pickerView,
   .MuiPickersYearSelection-container {
-    height: 200px;
+    height: 230px;
     min-height: 0;
   }
 
   .MuiPickersBasePicker-container {
     margin-bottom: 20px;
+  }
+
+  .MuiPickersDay-current {
+    border: 1px solid ${colors.selectedDay};
+    border-radius: 50%;
+  }
+
+  .MuiPickersDay-daySelected {
+    background: ${colors.selectedDay};
+  }
+
+  .MuiPickersDay-day {
+    &:hover {
+      background: ${colors.label};
+      p {
+        color: ${colors.hoverInCalendarItem};
+      }
+    }
+  }
+
+  .MuiTypography-subtitle1,
+  .MuiPickersYear-yearSelected {
+    width: 61px;
+    height: 24px;
+    margin: 0 9px 24px 0;
+  }
+
+  .MuiTypography-subtitle1 {
+    &:hover {
+      background: ${colors.label};
+      color: ${colors.hoverInCalendarItem};
+    }
+  }
+
+  .MuiPickersYear-yearSelected {
+    background: ${colors.selectedDay};
+    border-radius: 2px;
   }
 
   .button-groups {
@@ -133,3 +170,5 @@ export const notInCurrentMonth = css`
     color: #929292;
   }
 `
+
+export const todaysDate = css``

@@ -29,5 +29,7 @@ export const fontWeight = {
 
 export const colors = {
   background: '#181818',
-  label: '#FFFFFF',
+  label: '#ffffff',
+  selectedDay: '#00a3ff',
+  hoverInCalendarItem: '#000000',
 }
