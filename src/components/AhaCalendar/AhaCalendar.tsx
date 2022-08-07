@@ -50,12 +50,14 @@ export const renderDay: CalendarProps['renderDay'] = (
 
 interface AhaCalendarProps {
   anchorEl: HTMLElement | null
+  setAnchorElDate?: React.Dispatch<React.SetStateAction<Date>>
 }
 
 export const AhaCalendar: React.FC<AhaCalendarProps> = (props) => {
-  const { anchorEl } = props
+  const { anchorEl, setAnchorElDate } = props
   const [date, setDate] = useState(new Date())
   const [isYearPickerVisible, setYearPickerStatus] = useState(false)
+  const [isOpen, setPopperStatus] = useState(false)
 
   const currentYear = useMemo(() => date.getFullYear(), [date])
   const currentMonth = useMemo(() => MONTH_NAMES[date.getMonth()], [date])
@@ -90,9 +92,29 @@ export const AhaCalendar: React.FC<AhaCalendarProps> = (props) => {
     [hideYearPicker],
   )
 
+  const closePopper = useCallback(() => {
+    setPopperStatus(false)
+  }, [])
+
+  const openPopper = useCallback(() => {
+    setPopperStatus(true)
+  }, [])
+
+  const onClickCancel = useCallback(() => {
+    closePopper()
+  }, [closePopper])
+
+  const onClickOk = useCallback(() => {
+    if (setAnchorElDate) {
+      setAnchorElDate(date)
+    }
+
+    closePopper()
+  }, [closePopper, date, setAnchorElDate])
+
   return (
     <Popper
-      open={!!anchorEl}
+      open={isOpen || (!!anchorEl && !setAnchorElDate)}
       anchorEl={anchorEl}
       placement="right-start"
       css={calendarContainer}
@@ -116,8 +138,10 @@ export const AhaCalendar: React.FC<AhaCalendarProps> = (props) => {
         )}
       </MuiPickersUtilsProvider>
       <div className="button-groups">
-        <button className="cancel-button">Cancel</button>
-        <button>OK</button>
+        <button className="cancel-button" onClick={onClickCancel}>
+          Cancel
+        </button>
+        <button onClick={onClickOk}>OK</button>
       </div>
     </Popper>
   )

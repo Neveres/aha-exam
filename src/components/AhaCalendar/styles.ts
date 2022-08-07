@@ -2,15 +2,12 @@ import { css } from '@emotion/react'
 
 import { colors, fontWeight, fontSize } from 'src/GlobalCss'
 
-export const yearPickerSwitch = css`
-  position: absolute;
-  top: 105px;
-  left: 95px;
-  z-index: 2147483646;
-  width: 130px;
-  height: 23px;
-  cursor: pointer;
-`
+const muiPickersCalendarHeader = 'MuiPickersCalendarHeader'
+const muiPickersYear = 'MuiPickersYear'
+const muiTypography = 'MuiTypography'
+const muiPickersYearSelection = 'MuiPickersYearSelection'
+const muiPickersBasePicker = 'MuiPickersBasePicker'
+const muiPickersDay = 'MuiPickersDay'
 
 export const calendarContainer = css`
   width: 320px;
@@ -37,15 +34,15 @@ export const calendarContainer = css`
     position: absolute;
     top: 113px;
     left: 95px;
-    z-index: 999999999;
+    z-index: 2147483647;
     width: 130px;
     height: 23px;
     cursor: pointer;
   }
 
-  .MuiPickersCalendarHeader-switchHeader {
+  .${muiPickersCalendarHeader}-switchHeader {
     margin-top: 0;
-    .MuiPickersCalendarHeader-iconButton {
+    .${muiPickersCalendarHeader}-iconButton {
       background: ${colors.background};
       .MuiSvgIcon-root {
         color: ${colors.label};
@@ -53,36 +50,34 @@ export const calendarContainer = css`
     }
   }
 
-  .MuiTypography-body1,
-  .sub-title,
-  .MuiTypography-subtitle1,
-  .MuiPickersYear-yearSelected {
+  .${muiTypography}-body1, .sub-title,
+  .${muiTypography}-subtitle1, .${muiPickersYear}-yearSelected {
     font-weight: ${fontWeight.lighter};
     font-size: ${fontSize.large};
     line-height: 150%;
     color: ${colors.label};
   }
 
-  .MuiPickersCalendarHeader-dayLabel {
+  .${muiPickersCalendarHeader}-dayLabel {
     font-weight: ${fontWeight.lighter};
     font-size: ${fontSize.small};
     line-height: 13px;
     color: #929292;
   }
 
-  .MuiTypography-body2 {
+  .${muiTypography}-body2 {
     font-weight: ${fontWeight.lighter};
     font-size: ${fontSize.normal};
     line-height: 143%;
     color: ${colors.label};
   }
 
-  .MuiPickersYearSelection-container {
+  .${muiPickersYearSelection}-container {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     overflow: hidden;
     padding-left: 24px;
-    .MuiPickersYear-root {
+    .${muiPickersYear}-root {
       display: inline-flex;
     }
   }
@@ -91,30 +86,25 @@ export const calendarContainer = css`
     margin-bottom: 10px;
   }
 
-  .MuiPickersYear-yearSelected {
-    margin: 0;
-  }
-
-  .MuiPickersBasePicker-pickerView,
-  .MuiPickersYearSelection-container {
+  .${muiPickersBasePicker}-pickerView, .${muiPickersYearSelection}-container {
     height: 230px;
     min-height: 0;
   }
 
-  .MuiPickersBasePicker-container {
+  .${muiPickersBasePicker}-container {
     margin-bottom: 20px;
   }
 
-  .MuiPickersDay-current {
+  .${muiPickersDay}-current {
     border: 1px solid ${colors.selectedDay};
     border-radius: 50%;
   }
 
-  .MuiPickersDay-daySelected {
+  .${muiPickersDay}-daySelected {
     background: ${colors.selectedDay};
   }
 
-  .MuiPickersDay-day {
+  .${muiPickersDay}-day {
     &:hover {
       background: ${colors.label};
       p {
@@ -123,21 +113,22 @@ export const calendarContainer = css`
     }
   }
 
-  .MuiTypography-subtitle1,
-  .MuiPickersYear-yearSelected {
+  .${muiTypography}-subtitle1, .${muiPickersYear}-yearSelected {
     width: 61px;
     height: 24px;
-    margin: 0 9px 24px 0;
   }
 
-  .MuiTypography-subtitle1 {
+  .${muiTypography}-subtitle1 {
+    margin: 0 9px 24px 0;
+
     &:hover {
       background: ${colors.label};
       color: ${colors.hoverInCalendarItem};
     }
   }
 
-  .MuiPickersYear-yearSelected {
+  .${muiPickersYear}-yearSelected {
+    margin: 0;
     background: ${colors.selectedDay};
     border-radius: 2px;
   }
@@ -154,6 +145,7 @@ export const calendarContainer = css`
       color: ${colors.label};
       background: ${colors.background};
       border: 0;
+      cursor: pointer;
     }
 
     .cancel-button {
@@ -163,12 +155,10 @@ export const calendarContainer = css`
 `
 
 export const notInCurrentMonth = css`
-  .MuiTypography-body2 {
+  .${muiTypography}-body2 {
     font-weight: ${fontWeight.lighter};
     font-size: ${fontSize.normal};
     line-height: 143%;
     color: #929292;
   }
 `
-
-export const todaysDate = css``
