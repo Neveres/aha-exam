@@ -33,3 +33,8 @@ export const colors = {
   selectedDay: '#00a3ff',
   hoverInCalendarItem: '#000000',
 }
+
+export const fontFamily = {
+  ubuntu: 'Ubuntu',
+  inter: 'Inter',
+}

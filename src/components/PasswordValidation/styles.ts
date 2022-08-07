@@ -1,7 +1,9 @@
 import { css } from '@emotion/react'
 
+import { colors, fontSize, fontWeight, fontFamily } from 'src/GlobalCss'
+
 export const hintsContainer = css`
-  font-family: 'ubuntu';
+  font-family: ${fontFamily.ubuntu};
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -10,9 +12,9 @@ export const hintsContainer = css`
   position: relative;
   width: 335px;
   /* height: 226px; */
-  background: #242424;
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
+  background: #242424;
 `
 
 export const hintContainer = css`
@@ -21,11 +23,11 @@ export const hintContainer = css`
   align-items: center;
 
   span {
-    color: #ffffff;
+    color: ${colors.label};
     padding-left: 12px;
     font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: ${fontWeight.lighter};
+    font-size: ${fontSize.normal};
     line-height: 150%;
     letter-spacing: 0.25px;
   }
