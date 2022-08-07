@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React, { useCallback, useState, useMemo } from 'react'
-import { Popper } from '@material-ui/core'
+import { Popper, PopperPlacementType } from '@material-ui/core'
 import DateFnsUtils from '@date-io/date-fns'
 import {
   MuiPickersUtilsProvider,
@@ -50,14 +50,22 @@ export const renderDay: CalendarProps['renderDay'] = (
 
 interface AhaCalendarProps {
   anchorEl: HTMLElement | null
-  setAnchorElDate?: React.Dispatch<React.SetStateAction<Date>>
+  setAnchorElDate?: React.Dispatch<React.SetStateAction<string | Date>>
+  open?: boolean
+  placement?: PopperPlacementType
+  closeAhaCalendar?: () => void
 }
 
 export const AhaCalendar: React.FC<AhaCalendarProps> = (props) => {
-  const { anchorEl, setAnchorElDate } = props
+  const {
+    anchorEl,
+    setAnchorElDate,
+    open,
+    placement = 'right-start',
+    closeAhaCalendar,
+  } = props
   const [date, setDate] = useState(new Date())
   const [isYearPickerVisible, setYearPickerStatus] = useState(false)
-  const [isOpen, setPopperStatus] = useState(false)
 
   const currentYear = useMemo(() => date.getFullYear(), [date])
   const currentMonth = useMemo(() => MONTH_NAMES[date.getMonth()], [date])
@@ -92,31 +100,24 @@ export const AhaCalendar: React.FC<AhaCalendarProps> = (props) => {
     [hideYearPicker],
   )
 
-  const closePopper = useCallback(() => {
-    setPopperStatus(false)
-  }, [])
-
-  const openPopper = useCallback(() => {
-    setPopperStatus(true)
-  }, [])
-
   const onClickCancel = useCallback(() => {
-    closePopper()
-  }, [closePopper])
+    if (closeAhaCalendar) {
+      closeAhaCalendar()
+    }
+  }, [closeAhaCalendar])
 
   const onClickOk = useCallback(() => {
-    if (setAnchorElDate) {
+    if (setAnchorElDate && closeAhaCalendar) {
       setAnchorElDate(date)
+      closeAhaCalendar()
     }
-
-    closePopper()
-  }, [closePopper, date, setAnchorElDate])
+  }, [closeAhaCalendar, date, setAnchorElDate])
 
   return (
     <Popper
-      open={isOpen || (!!anchorEl && !setAnchorElDate)}
+      open={open || (!!anchorEl && !setAnchorElDate)}
       anchorEl={anchorEl}
-      placement="right-start"
+      placement={placement}
       css={calendarContainer}
     >
       <div className="sub-title">Text</div>

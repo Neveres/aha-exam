@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-export const passwordInput = css`
+export const birthdayPicker = css`
   * {
     font-family: 'ubuntu' !important;
   }
