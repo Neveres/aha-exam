@@ -1,20 +1,22 @@
 import { createTheme } from '@mui/material'
 
+import { colors } from 'src/GlobalCss'
+
 export const theme = createTheme({
   components: {
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
-          borderRadius: 10,
+          borderRadius: '8px',
           '&:hover .MuiOutlinedInput-notchedOutline': {
-            borderColor: 'white',
+            border: `3px solid ${colors.label}`,
           },
           '& .MuiOutlinedInput-notchedOutline': {
-            border: '3px solid #888888',
+            border: '3px solid rgba(255, 255, 255, 0.5)',
           },
           '&.Mui-focused': {
             '& .MuiOutlinedInput-notchedOutline': {
-              border: '3px solid #0584CC',
+              border: `3px solid ${colors.selectedDay}`,
             },
           },
         },

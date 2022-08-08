@@ -3,24 +3,35 @@ import { css } from '@emotion/react'
 import { colors, fontSize, fontWeight, fontFamily } from 'src/GlobalCss'
 
 export const hintsContainer = css`
-  font-family: ${fontFamily.ubuntu};
+  box-sizing: border-box;
+  position: relative;
   margin-top: 20px;
+  padding: 8px 12px 0 12px;
+  width: 335px;
+  height: 226px;
+  font-family: ${fontFamily.ubuntu};
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 18px 12px;
-  position: relative;
-  width: 335px;
-  /* height: 226px; */
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   background: #242424;
+
+  div:nth-child(4) {
+    height: 50px;
+  }
 `
 
 export const hintContainer = css`
-  padding-bottom: 10px;
+  width: 311px;
+  height: 40px;
   display: flex;
   align-items: center;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
 
   span {
     color: ${colors.label};
