@@ -13,7 +13,7 @@ const HINTS = [
   'Longer than 8 characters',
 ]
 
-const getPrefixIcon = (isValid: boolean) => {
+export const getPrefixIcon = (isValid: boolean) => {
   return isValid ? (
     <CheckCircleIcon
       sx={{

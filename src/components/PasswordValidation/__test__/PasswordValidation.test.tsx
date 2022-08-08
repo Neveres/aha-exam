@@ -1,7 +1,7 @@
 import React from 'react'
 import { create } from 'react-test-renderer'
 
-import { PasswordValidation } from '../PasswordValidation'
+import { PasswordValidation, getPrefixIcon } from '../PasswordValidation'
 
 describe('PasswordValidation', () => {
   test('should render well', () => {
@@ -16,5 +16,10 @@ describe('PasswordValidation', () => {
         ).toJSON(),
       ).toMatchSnapshot()
     }
+  })
+
+  test('getPrefixIcon should return expected result corresponding to input', () => {
+    expect(create(getPrefixIcon(true)).toJSON()).toMatchSnapshot()
+    expect(create(getPrefixIcon(false)).toJSON()).toMatchSnapshot()
   })
 })
