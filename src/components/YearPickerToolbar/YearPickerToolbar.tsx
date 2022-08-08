@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { ArrowLeftIcon } from '@material-ui/pickers/_shared/icons/ArrowLeftIcon'
 import { ArrowRightIcon } from '@material-ui/pickers/_shared/icons/ArrowRightIcon'
 
@@ -29,6 +29,16 @@ export const YearPickerToolbar: React.FC<YearPickerToolbarProps> = (props) => {
   const decreaseYear = useCallback(() => {
     setDate(getNewDate(date, -UNIT))
   }, [date, setDate])
+
+  useEffect(() => {
+    const selectedYear = document.getElementsByClassName(
+      'MuiPickersYear-yearSelected',
+    )[0]
+
+    if (selectedYear) {
+      selectedYear.scrollIntoView({ block: 'center' })
+    }
+  }, [year])
 
   return (
     <div css={yearPickerToolbarContainer}>

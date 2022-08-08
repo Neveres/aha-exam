@@ -113,9 +113,14 @@ export const AhaCalendar: React.FC<AhaCalendarProps> = (props) => {
     }
   }, [closeAhaCalendar, date, setAnchorElDate])
 
+  const alwaysOpen = useMemo(
+    () => typeof open === 'undefined' && !!anchorEl,
+    [anchorEl, open],
+  )
+
   return (
     <Popper
-      open={open || (!!anchorEl && !setAnchorElDate)}
+      open={open || alwaysOpen}
       anchorEl={anchorEl}
       placement={placement}
       css={calendarContainer}

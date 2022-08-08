@@ -3,7 +3,6 @@ import { useLocation } from 'react-router'
 
 import { AppHeader, AppBody } from 'src/components'
 import { Routes } from './Routes'
-import { GlobalCss } from './GlobalCss'
 
 function App() {
   const { pathname } = useLocation()
@@ -11,14 +10,11 @@ function App() {
   return (
     <>
       <AppHeader />
-
       <AppBody pathname={pathname}>
         <Suspense fallback={<div>Loading...</div>}>
           <Routes />
         </Suspense>
       </AppBody>
-
-      <GlobalCss />
     </>
   )
 }
