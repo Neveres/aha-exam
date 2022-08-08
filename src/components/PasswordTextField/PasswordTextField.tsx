@@ -34,6 +34,7 @@ export const PasswordTextField = () => {
               lineHeight: '18px',
               letterSpacing: '0.4px',
               textOverflow: 'unset',
+              left: '1px',
             },
           }}
           inputProps={{

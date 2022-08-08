@@ -24,7 +24,7 @@ export const passwordInput = css`
     }
 
     legend {
-      width: 61px;
+      width: 63px;
     }
   }
 `

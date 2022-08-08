@@ -6,7 +6,7 @@ export const hintsContainer = css`
   box-sizing: border-box;
   position: relative;
   margin-top: 20px;
-  padding: 8px 12px 0 12px;
+  padding: 6px 12px 0 12px;
   width: 335px;
   height: 226px;
   font-family: ${fontFamily.ubuntu};
@@ -29,13 +29,13 @@ export const hintContainer = css`
   align-items: center;
 
   svg {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 
   span {
     color: ${colors.label};
-    padding-left: 12px;
+    padding-left: 10px;
     font-style: normal;
     font-weight: ${fontWeight.lighter};
     font-size: ${fontSize.normal};
