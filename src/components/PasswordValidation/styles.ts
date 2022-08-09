@@ -2,7 +2,7 @@ import { css } from '@emotion/react'
 
 import { colors, fontSize, fontWeight, fontFamily } from 'src/GlobalCss'
 
-export const hintsContainer = css`
+export const validationsContainer = css`
   box-sizing: border-box;
   position: relative;
   margin-top: 20px;
@@ -16,13 +16,9 @@ export const hintsContainer = css`
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   background: #242424;
-
-  div:nth-child(4) {
-    height: 50px;
-  }
 `
 
-export const hintContainer = css`
+export const validationContainer = css`
   width: 311px;
   height: 40px;
   display: flex;

@@ -1,44 +1,24 @@
-import {
-  areCharactersEnough,
-  validPasswordWithCharCode,
-  validatePassword,
-} from '../utils'
+import { passwordRestrictions, validatePassword } from '../utils'
 
 describe('utils', () => {
-  test('areCharactersEnough should work well', () => {
-    expect(areCharactersEnough('less')).toBeFalsy()
-    expect(areCharactersEnough('isEnough')).toBeTruthy()
-  })
-
-  describe('validPasswordWithCharCode should return expected result', () => {
+  describe('passwordRestrictions validator should return expected result', () => {
     test('when input has upper case letter', () => {
-      expect(validPasswordWithCharCode('L')).toStrictEqual([
-        true,
-        false,
-        false,
-        false,
-      ])
+      const upperCaseValidator = passwordRestrictions[0].validator
+      expect(upperCaseValidator('L')).toBeTruthy()
     })
 
     test('when input has lower case letter', () => {
-      expect(validPasswordWithCharCode('l')).toStrictEqual([
-        false,
-        true,
-        false,
-        false,
-      ])
+      const lowerCaseValidator = passwordRestrictions[1].validator
+      expect(lowerCaseValidator('l')).toBeTruthy()
     })
 
     test('when input has number', () => {
-      expect(validPasswordWithCharCode('1')).toStrictEqual([
-        false,
-        false,
-        true,
-        false,
-      ])
+      const numberValidator = passwordRestrictions[2].validator
+      expect(numberValidator('1')).toBeTruthy()
     })
 
     test('when input has special character', () => {
+      const specialCharacterValidator = passwordRestrictions[3].validator
       const specialCharacters = [
         '~',
         '`',
@@ -73,22 +53,14 @@ describe('utils', () => {
       ]
 
       for (let i = 0, maxI = specialCharacters.length; i < maxI; i++) {
-        expect(validPasswordWithCharCode(specialCharacters[i])).toStrictEqual([
-          false,
-          false,
-          false,
-          true,
-        ])
+        expect(specialCharacterValidator(specialCharacters[i])).toBeTruthy()
       }
     })
 
-    test('when input is empty string', () => {
-      expect(validPasswordWithCharCode('')).toStrictEqual([
-        false,
-        false,
-        false,
-        false,
-      ])
+    test('when input has enough or not enough characters', () => {
+      const numberOfCharacter = passwordRestrictions[4]
+      expect(numberOfCharacter.validator('less')).toBeFalsy()
+      expect(numberOfCharacter.validator('isEnough')).toBeTruthy()
     })
   })
 
