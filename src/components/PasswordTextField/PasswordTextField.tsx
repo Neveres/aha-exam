@@ -4,7 +4,7 @@ import { TextField, ThemeProvider } from '@mui/material'
 
 import { colors } from 'src/GlobalCss'
 import { validatePassword } from 'src/libraries'
-import { PasswordValidation } from 'src/components'
+import { PurePasswordValidation } from 'src/components'
 import { theme } from './theme'
 import { passwordInput } from './styles'
 
@@ -46,7 +46,9 @@ export const PasswordTextField = () => {
           onChange={onChange}
         />
       </ThemeProvider>
-      {password && <PasswordValidation validationResult={validationResult} />}
+      {password && (
+        <PurePasswordValidation validationResult={validationResult} />
+      )}
     </>
   )
 }

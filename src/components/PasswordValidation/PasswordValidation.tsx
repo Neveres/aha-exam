@@ -51,3 +51,15 @@ export const PasswordValidation: React.FC<PasswordValidationProps> = (
     </div>
   )
 }
+
+export const PurePasswordValidation = React.memo(
+  PasswordValidation,
+  (prevProps: PasswordValidationProps, nextProps: PasswordValidationProps) => {
+    const { validationResult: previousValidationResult } = prevProps
+    const { validationResult: nextValidationResult } = nextProps
+
+    return nextValidationResult.every((result, index) => {
+      return result === previousValidationResult[index]
+    })
+  },
+)
