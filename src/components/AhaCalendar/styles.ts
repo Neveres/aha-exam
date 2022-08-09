@@ -15,8 +15,9 @@ export const calendarContainer = css`
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   background: ${colors.background};
-  font-family: 'Inter';
+  font-family: 'Inter' !important;
   font-style: normal;
+  overflow: hidden;
 
   .sub-title {
     padding: 17px 0 4px 24px;
@@ -41,13 +42,47 @@ export const calendarContainer = css`
   }
 
   .${muiPickersCalendarHeader}-switchHeader {
-    margin-top: 0;
+    margin-top: 3.25px;
+    margin-bottom: 12px;
+    width: 320px;
+    height: 48px;
+
     .${muiPickersCalendarHeader}-iconButton {
+      width: 48px;
+      height: 48px;
+      padding-top: 13.5px;
       background: ${colors.background};
+
+      .MuiIconButton-label {
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
       .MuiSvgIcon-root {
         color: ${colors.label};
       }
     }
+
+    .${muiPickersCalendarHeader}-transitionContainer {
+      height: 24px;
+      font-weight: ${fontWeight.lighter};
+      font-size: ${fontSize.large};
+      line-height: 24px;
+
+      p {
+        letter-spacing: 0.4px;
+      }
+    }
+  }
+
+  .${muiPickersCalendarHeader}-dayLabel {
+    margin: 0 3px;
+  }
+
+  .MuiPickersDay-day {
+    margin: 0 3px;
   }
 
   .${muiTypography}-body1, .sub-title,
@@ -68,7 +103,7 @@ export const calendarContainer = css`
   .${muiTypography}-body2 {
     font-weight: ${fontWeight.lighter};
     font-size: ${fontSize.normal};
-    line-height: 143%;
+    line-height: 20.2px;
     color: ${colors.label};
   }
 
@@ -83,7 +118,11 @@ export const calendarContainer = css`
   }
 
   .MuiPickersCalendar-transitionContainer {
-    margin-bottom: 10px;
+    margin-top: 11px;
+    margin-bottom: 16px;
+    font-weight: ${fontWeight.lighter};
+    font-size: ${fontSize.large};
+    line-height: 150%;
   }
 
   .${muiPickersBasePicker}-pickerView, .${muiPickersYearSelection}-container {
@@ -135,7 +174,7 @@ export const calendarContainer = css`
 
   .button-groups {
     position: absolute;
-    right: 24px;
+    right: 38px;
 
     button {
       font-family: 'Inter';
@@ -149,7 +188,7 @@ export const calendarContainer = css`
     }
 
     .cancel-button {
-      margin-right: 70px;
+      margin-right: 58px;
     }
   }
 `
