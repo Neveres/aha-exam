@@ -109,7 +109,7 @@ export const calendarContainer = css`
 
   .${muiPickersYearSelection}-container {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 70px 70px 70px 70px;
     overflow: hidden;
     padding-left: 24px;
     .${muiPickersYear}-root {
@@ -131,7 +131,7 @@ export const calendarContainer = css`
   }
 
   .${muiPickersBasePicker}-container {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
 
   .${muiPickersDay}-current {
@@ -159,6 +159,7 @@ export const calendarContainer = css`
 
   .${muiTypography}-subtitle1 {
     margin: 0 9px 24px 0;
+    letter-spacing: 0.4px;
 
     &:hover {
       background: ${colors.label};

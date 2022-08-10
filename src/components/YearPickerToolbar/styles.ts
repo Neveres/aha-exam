@@ -6,7 +6,8 @@ export const yearPickerToolbarContainer = css`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 53.98px;
+  height: 48px;
+  margin-top: 1px;
   margin-bottom: 15px;
   font-family: 'Inter';
   font-style: normal;
@@ -22,6 +23,8 @@ export const yearPickerToolbarContainer = css`
   }
 
   svg {
-    padding: 12px;
+    width: 24px;
+    height: 24px;
+    padding: 20px 12px 12px 11px;
   }
 `

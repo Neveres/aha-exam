@@ -16,6 +16,7 @@ export const PasswordTextField = () => {
   }, [])
 
   const validationResult = useMemo(() => validatePassword(password), [password])
+  // const inputValue = useMemo(() => '*'.repeat(password.length), [password])
 
   return (
     <>
