@@ -124,6 +124,8 @@ export const AhaCalendar: React.FC<AhaCalendarProps> = (props) => {
       anchorEl={anchorEl}
       placement={placement}
       css={calendarContainer}
+      disablePortal={true}
+      className="aha-calendar"
     >
       <div className="sub-title">Text</div>
       <div className="main-title">{`${currentMonth}, ${currentYear}`}</div>

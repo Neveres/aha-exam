@@ -2,6 +2,14 @@ import { css } from '@emotion/react'
 
 import { fontFamily, fontSize, fontWeight } from 'src/GlobalCss'
 
+export const birthdayPickerContainer = css`
+  position: relative;
+  .aha-calendar {
+    position: relative !important;
+    transform: none !important;
+  }
+`
+
 export const birthdayPicker = css`
   * {
     font-family: ${fontFamily.ubuntu} !important;
@@ -10,6 +18,7 @@ export const birthdayPicker = css`
   width: 335px;
   height: 58px;
   box-sizing: border-box;
+  margin-bottom: 14px;
 
   .MuiInputBase-root {
     height: 58px;

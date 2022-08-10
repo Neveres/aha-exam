@@ -5,7 +5,7 @@ import { TextField, ThemeProvider } from '@mui/material'
 import { colors } from 'src/GlobalCss'
 import { AhaCalendar } from 'src/components'
 import { theme } from './theme'
-import { birthdayPicker } from './styles'
+import { birthdayPickerContainer, birthdayPicker } from './styles'
 
 export const BirthdayPicker = () => {
   const [birthdayDate, setBirthdayDate] = useState<string | Date>('')
@@ -33,8 +33,8 @@ export const BirthdayPicker = () => {
       const date = birthdayDate.getDate()
       const month = birthdayDate.getMonth() + 1
 
-      return `${date < 10 ? `0${date}` : date}/${
-        month < 10 ? `0${month}` : month
+      return `${month < 10 ? `0${month}` : month}/${
+        date < 10 ? `0${date}` : date
       }/${birthdayDate.getFullYear()}`
     } else {
       return birthdayDate
@@ -42,7 +42,7 @@ export const BirthdayPicker = () => {
   }, [birthdayDate])
 
   return (
-    <>
+    <div css={birthdayPickerContainer}>
       <ThemeProvider theme={theme}>
         <TextField
           label="Birthday"
@@ -76,6 +76,6 @@ export const BirthdayPicker = () => {
         placement="bottom-start"
         closeAhaCalendar={closeAhaCalendar}
       />
-    </>
+    </div>
   )
 }
