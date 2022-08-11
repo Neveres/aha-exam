@@ -18,12 +18,14 @@ export const birthdayPicker = css`
   width: 335px;
   height: 58px;
   box-sizing: border-box;
-  margin-bottom: 14px;
+  margin-bottom: 9px;
 
   .MuiInputBase-root {
     height: 58px;
 
     input {
+      position: absolute;
+      top: 15px;
       height: 24px;
       padding: 0 0 0 12px;
       font-size: ${fontSize.large};
@@ -32,8 +34,18 @@ export const birthdayPicker = css`
       letter-spacing: 0.15px;
     }
 
-    legend {
-      width: 57px;
+    fieldset {
+      height: 100%;
+      box-sizing: border-box;
+      padding: 0 0 0 9px;
+
+      legend {
+        width: 57px;
+        height: 0;
+        span {
+          padding-left: 0;
+        }
+      }
     }
   }
 `

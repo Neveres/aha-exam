@@ -20,7 +20,7 @@ export const calendarContainer = css`
   overflow: hidden;
 
   .sub-title {
-    padding: 17px 0 4px 24px;
+    padding: 17px 0 3px 24px;
   }
 
   .main-title {
@@ -118,8 +118,8 @@ export const calendarContainer = css`
   }
 
   .MuiPickersCalendar-transitionContainer {
-    margin-top: 11px;
-    margin-bottom: 16px;
+    margin-top: 9px;
+    margin-bottom: 19px;
     font-weight: ${fontWeight.lighter};
     font-size: ${fontSize.large};
     line-height: 150%;
@@ -175,7 +175,7 @@ export const calendarContainer = css`
 
   .button-groups {
     position: absolute;
-    right: 38px;
+    right: 39px;
 
     button {
       font-family: 'Inter';
