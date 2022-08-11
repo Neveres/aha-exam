@@ -12,9 +12,9 @@ const AppHeader = () => {
         const { name, path } = item
 
         return (
-          <span key={path}>
+          <button key={path}>
             <Link to={path}>{name}</Link>
-          </span>
+          </button>
         )
       }),
     [],

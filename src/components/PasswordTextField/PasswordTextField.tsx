@@ -9,21 +9,36 @@ import { theme } from './theme'
 import { passwordInput } from './styles'
 
 export const PasswordTextField = () => {
+  const symbolOfInput = '*'
   const [password, setPassword] = useState('')
 
-  const onChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(event.target.value)
-  }, [])
+  const onChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const {
+        target: { value },
+      } = event
+
+      const { length: lengthOfPassword } = password
+      setPassword(
+        value.length > lengthOfPassword
+          ? `${password}${value.slice(-1)}`
+          : password.slice(0, lengthOfPassword - 1),
+      )
+    },
+    [password],
+  )
 
   const validationResult = useMemo(() => validatePassword(password), [password])
-  // const inputValue = useMemo(() => '*'.repeat(password.length), [password])
+  const encryptedPassword = useMemo(
+    () => symbolOfInput.repeat(password.length),
+    [password],
+  )
 
   return (
     <>
       <ThemeProvider theme={theme}>
         <TextField
           label="Password"
-          type="password"
           InputLabelProps={{
             shrink: true,
             style: {
@@ -43,7 +58,7 @@ export const PasswordTextField = () => {
           }}
           placeholder="Password"
           css={passwordInput}
-          value={password}
+          value={encryptedPassword}
           onChange={onChange}
         />
       </ThemeProvider>
