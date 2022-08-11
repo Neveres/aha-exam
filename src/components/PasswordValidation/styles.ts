@@ -6,7 +6,7 @@ export const validationsContainer = css`
   box-sizing: border-box;
   position: relative;
   margin-top: 20px;
-  padding: 6px 12px 0 12px;
+  padding: 3px 12px 0 12px;
   width: 335px;
   height: 226px;
   font-family: ${fontFamily.ubuntu};
