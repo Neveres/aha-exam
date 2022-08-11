@@ -42,8 +42,6 @@ export const PasswordTextField = () => {
           InputLabelProps={{
             shrink: true,
             style: {
-              width: '55px',
-              height: '18px',
               transform: 'translate(14px, -9px) scale(1)',
               fontSize: '12px',
               color: colors.label,
