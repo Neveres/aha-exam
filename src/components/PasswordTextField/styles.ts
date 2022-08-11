@@ -12,19 +12,33 @@ export const passwordInput = css`
   }
 
   .MuiInputBase-root {
-    height: 58px;
+    position: relative;
+    height: 100%;
 
     input {
+      position: absolute;
+      top: 15px;
+      width: 311px;
       height: 24px;
-      padding: 0 0 0 12px;
+      padding: 0 12px;
       font-size: ${fontSize.large};
       font-weight: ${fontWeight.lighter};
       line-height: 24px;
       letter-spacing: 0.15px;
     }
 
-    legend {
-      width: 63px;
+    fieldset {
+      height: 100%;
+      box-sizing: border-box;
+      padding: 0 0 0 9px;
+
+      legend {
+        width: 63px;
+        height: 0;
+        span {
+          padding-left: 0;
+        }
+      }
     }
   }
 `
