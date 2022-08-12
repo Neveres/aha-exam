@@ -5,8 +5,8 @@ import { colors, fontSize, fontWeight, fontFamily } from 'src/GlobalCss'
 export const validationsContainer = css`
   box-sizing: border-box;
   position: relative;
-  margin-top: 20px;
-  padding: 3px 12px 0 12px;
+  margin-top: 15px;
+  padding: 9px 12px 0 12px;
   width: 335px;
   height: 226px;
   font-family: ${fontFamily.ubuntu};
