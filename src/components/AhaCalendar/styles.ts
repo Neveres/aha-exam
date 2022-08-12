@@ -15,9 +15,12 @@ export const calendarContainer = css`
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   background: ${colors.background};
-  font-family: 'Inter' !important;
   font-style: normal;
   overflow: hidden;
+
+  * {
+    font-family: 'Inter' !important;
+  }
 
   .sub-title {
     padding: 17px 0 4px 24px;
