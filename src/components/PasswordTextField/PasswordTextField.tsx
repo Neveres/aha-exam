@@ -8,8 +8,9 @@ import { PurePasswordValidation } from 'src/components'
 import { theme } from './theme'
 import { passwordInput } from './styles'
 
+export const getEncryptedPassword = (length: number) => '*'.repeat(length)
+
 export const PasswordTextField = () => {
-  const symbolOfInput = '*'
   const [password, setPassword] = useState('')
 
   const onChange = useCallback(
@@ -30,7 +31,7 @@ export const PasswordTextField = () => {
 
   const validationResult = useMemo(() => validatePassword(password), [password])
   const encryptedPassword = useMemo(
-    () => symbolOfInput.repeat(password.length),
+    () => getEncryptedPassword(password.length),
     [password],
   )
 
