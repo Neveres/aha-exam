@@ -53,7 +53,7 @@ export const calendarContainer = css`
     .${muiPickersCalendarHeader}-iconButton {
       width: 48px;
       height: 48px;
-      padding-top: 13.5px;
+      padding-top: 14.5px;
       background: ${colors.background};
 
       .MuiIconButton-label {
@@ -73,10 +73,6 @@ export const calendarContainer = css`
       font-weight: ${fontWeight.lighter};
       font-size: ${fontSize.large};
       line-height: 24px;
-
-      p {
-        letter-spacing: 0.5px;
-      }
     }
   }
 

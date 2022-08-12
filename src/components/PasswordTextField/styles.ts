@@ -12,7 +12,6 @@ export const passwordInput = css`
   }
 
   .MuiInputBase-root {
-    position: relative;
     height: 100%;
 
     input {
