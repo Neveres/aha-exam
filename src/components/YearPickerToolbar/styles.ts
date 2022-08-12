@@ -7,8 +7,8 @@ export const yearPickerToolbarContainer = css`
   justify-content: space-between;
   align-items: center;
   height: 48px;
-  margin-top: 1px;
-  margin-bottom: 15px;
+  margin-top: 2px;
+  margin-bottom: 16px;
   font-family: 'Inter';
   font-style: normal;
   color: ${colors.label};

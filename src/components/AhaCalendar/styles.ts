@@ -20,11 +20,11 @@ export const calendarContainer = css`
   overflow: hidden;
 
   .sub-title {
-    padding: 17px 0 3px 24px;
+    padding: 17px 0 4px 24px;
   }
 
   .main-title {
-    padding: 0 0 10px 24px;
+    padding: 0 0 9px 24px;
     font-weight: ${fontWeight.bolder};
     font-size: ${fontSize.extraLarge};
     line-height: 137.5%;
@@ -72,7 +72,7 @@ export const calendarContainer = css`
       line-height: 24px;
 
       p {
-        letter-spacing: 0.4px;
+        letter-spacing: 0.5px;
       }
     }
   }
@@ -111,15 +111,15 @@ export const calendarContainer = css`
     display: grid;
     grid-template-columns: 70px 70px 70px 70px;
     overflow: hidden;
-    padding-left: 24px;
+    padding-left: 23px;
     .${muiPickersYear}-root {
       display: inline-flex;
     }
   }
 
   .MuiPickersCalendar-transitionContainer {
-    margin-top: 9px;
-    margin-bottom: 19px;
+    margin-top: 11px;
+    margin-bottom: 17px;
     font-weight: ${fontWeight.lighter};
     font-size: ${fontSize.large};
     line-height: 150%;
@@ -175,7 +175,7 @@ export const calendarContainer = css`
 
   .button-groups {
     position: absolute;
-    right: 39px;
+    right: 38px;
 
     button {
       font-family: 'Inter';
@@ -189,7 +189,7 @@ export const calendarContainer = css`
     }
 
     .cancel-button {
-      margin-right: 58px;
+      margin-right: 59px;
     }
   }
 `
